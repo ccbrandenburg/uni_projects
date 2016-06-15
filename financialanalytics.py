@@ -31,7 +31,6 @@ def convert_categorical(y):
         if type(y[item][1]) != str:
             pass
 
-
 #converting date string into a timestamps
 #date to year
 def convert_date_year(y, x):
@@ -58,9 +57,6 @@ def convert_date_weeknum(y, x):
     y[x] = pd.to_datetime(y[x])
     y[x+'_week'] = y[x].dt.week
 
-
-
-
 def convert_dateflag(x):
     y[x+'_daydif'] = y['date'].apply(compare_dates)
     if y[x+'_daydif'] <= 30:
@@ -69,7 +65,6 @@ def convert_dateflag(x):
         y[x+'_daydif'] = 0
     else:
         y[x+'_daydif'] = 0
-
 
 def main():
     date_var = []
